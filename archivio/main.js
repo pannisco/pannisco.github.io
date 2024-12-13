@@ -83,7 +83,7 @@ document.querySelectorAll("td a").forEach(function(sel) {
 	// Add an icon for every file.
 	for (var i = 0; i < formats.length; i++) {
 		if (fileExt.toLowerCase() == formats[i].toLowerCase()) {
-			sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/' + formats[i] + '.png" style="margin:0px 4px -4px 0px"></img></a>' + oldText;
+			sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/icone' + formats[i] + '.png" style="margin:0px 4px -4px 0px"></img></a>' + oldText;
 			found = 1;
 			
 			return;
@@ -92,7 +92,7 @@ document.querySelectorAll("td a").forEach(function(sel) {
 
 	// Add an icon for the go-back link.
 	if (sel.textContent.indexOf("Parent directory") >= 0) {
-		sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/home.png" style="margin:0px 4px -4px 0px">' + oldText;
+		sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/icone/home.png" style="margin:0px 4px -4px 0px">' + oldText;
 		found = 1;
 		
 		return;
@@ -102,7 +102,7 @@ document.querySelectorAll("td a").forEach(function(sel) {
 	// Check for folders as they don't have extensions.
 	if (sel.getAttribute("href").includes('/')) {
 		
-		sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/folder.png" style="margin:0px 4px -4px 0px">' + oldText.substring(0, oldText.length - 1);
+		sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/icone/folder.png" style="margin:0px 4px -4px 0px">' + oldText.substring(0, oldText.length - 1);
 		found = 1;
 
 		return;
@@ -110,7 +110,7 @@ document.querySelectorAll("td a").forEach(function(sel) {
 
 	// File format not supported by Better Listings, so let's load a generic icon.
 	if (found == 0) {
-		sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/error.png" style="margin:0px 4px -4px 0px">' + oldText;
+		sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/icone/error.png" style="margin:0px 4px -4px 0px">' + oldText;
 		
 		return;
 	}
