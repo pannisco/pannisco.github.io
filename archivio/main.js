@@ -1,4 +1,4 @@
-var websiteName = "Software Repository";
+var websiteName = "Peppe Meow DataBase";
 
 var ready = (callback) => {
   if (document.readyState != "loading") callback();
