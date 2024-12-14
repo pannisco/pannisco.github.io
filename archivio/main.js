@@ -83,7 +83,7 @@ document.querySelectorAll("td a").forEach(function(sel) {
 	// Add an icon for every file.
 	for (var i = 0; i < formats.length; i++) {
 		if (fileExt.toLowerCase() == formats[i].toLowerCase()) {
-			sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/icone' + formats[i] + '.png" style="margin:0px 4px -4px 0px"></img></a>' + oldText;
+			sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/icone/' + formats[i] + '.png" style="margin:0px 4px -4px 0px"></img></a>' + oldText;
 			found = 1;
 			
 			return;
