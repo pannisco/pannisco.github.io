@@ -56,8 +56,8 @@ inputElem.addEventListener("keyup", function() {
 var currentDir = document.querySelector("span").textContent;
 
 // Truncate long folder names.
-if (currentDir.length > 15)
-	currentDir = currentDir.substring(0, 14) + "...";
+if (currentDir.length > 20)
+	currentDir = currentDir.substring(0, 19) + "...";
 
 // Updating page title.
 document.title = currentDir + " – " + websiteName;
