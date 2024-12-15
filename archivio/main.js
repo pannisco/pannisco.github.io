@@ -91,8 +91,8 @@ document.querySelectorAll("td a").forEach(function(sel) {
 	}
 
 	// Add an icon for the go-back link.
-	if (sel.textContent.indexOf("Parent directory") >= 0) {
-		sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/icone/home.png" style="margin:0px 4px -4px 0px">' + oldText;
+	if (sel.textContent.indexOf("Indietro") >= 0) {
+		sel.innerHTML = '<img class="icons" src="https://pannisco.github.io/archivio/icone/indietro.png" style="margin:0px 4px -4px 0px">' + oldText;
 		found = 1;
 		
 		return;
