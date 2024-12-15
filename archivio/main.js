@@ -13,7 +13,7 @@ var tdEmpty = trEmpty.insertCell(0);
 
 tdEmpty.setAttribute("colspan", "100");
 tdEmpty.id = "not-found";
-tdEmpty.innerHTML = "<center>No results found :(</center>";
+tdEmpty.innerHTML = "<center>Nessun file trovato :(</center>";
 
 trEmpty.id = "not-found-border";
 trEmpty.hidden = true;
