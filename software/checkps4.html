@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E' modificabile la mia PS4?</title>
+    <style>
+        body {
+            background-color: #efa541;
+            height: 100%;
+            overflow: hidden;
+        }
+        h1 {
+            color: white;
+            font-family:'Arial Narrow Bold', sans-serif;
+            font-weight: bold;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh; 
+        }
+        h2 {
+            color: white;
+            font-family:'Arial Narrow Bold', sans-serif;
+            font-weight: bold;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh; 
+        }
+        .red-bg { background-color: red; color: white; padding: 10px; }
+        .green-bg { background-color: green; color: white; padding: 10px; }
+    </style>
+</head>
+<body>
+    <center>
+          <h1 id="PS4fw">Apri questa pagina da un browser PS4.</h1>
+          <br>
+          <h2 id="PS4ver"></h2>
+    </center>
+    <script>
+        var UA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple')).replace("PlayStation 4/","");
+        if (parseFloat(UA) > 11.00) {
+            document.getElementById("PS4fw").innerHTML = "PS4 NON MODIFICABILE! :(";
+            document.getElementById("PS4ver").innerHTML = parseFloat(UA);
+            document.getElementById("PS4fw").className = "red-bg";  
+        } else if (parseFloat(UA) <= 11.00) {
+            document.getElementById("PS4fw").innerHTML = "PS4 MODIFICABILE! :)";
+            document.getElementById("PS4ver").innerHTML = parseFloat(UA);
+            document.getElementById("PS4fw").className = "green-bg";
+        } else {
+            document.getElementById("PS4fw").innerHTML = "Apri questa pagina da un browser PS4.";
+        }
+    </script>
+</body>
+</html>
