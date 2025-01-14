@@ -6,52 +6,50 @@
     <title>È modificabile la mia PS4?</title>
     <style>
         body {
-            background-color: #efa541;
             height: 100%;
-            overflow: hidden;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
         }
         h1 {
             color: white;
             font-family:'Arial Narrow Bold', sans-serif;
             font-weight: bold;
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            height: 100vh; 
+            margin: 10px 0;
         }
         h2 {
             color: white;
             font-family:'Arial Narrow Bold', sans-serif;
             font-weight: bold;
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            height: 100vh; 
+            margin: 10px 0;
         }
         .red-bg { background-color: red; }
         .green-bg { background-color: green; }
         .default-bg { background-color: #efa541; }
     </style>
 </head>
-<body>
+<body class="default-bg">
     <h1 id="PS4fw">Apri questa pagina da un browser PS4.</h1>
-    <h2 id="PS4ver"></h2>
+    <h2 id="PS4ver">Versione firmware non rilevata.</h2>
     <script>
         var UA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple')).replace("layStation 4/", "");
 
         if (isNaN(UA) || UA === "") {
             document.getElementById("PS4fw").innerHTML = "Apri questa pagina da un browser PS4.";
-            document.getElementById("PS4fw").className = "default-bg";
-            document.getElementById("PS4ver").innerHTML = "";
+            document.body.className = "default-bg";
+            document.getElementById("PS4ver").innerHTML = "Versione firmware non rilevata.";
         } else {
             var firmwareVersion = parseFloat(UA).toFixed(2);
             document.getElementById("PS4ver").innerHTML = "Versione rilevata: " + firmwareVersion;
             if (firmwareVersion > 11.00) {
                 document.getElementById("PS4fw").innerHTML = "PS4 non modificabile :(";
-                document.getElementById("PS4fw").className = "red-bg";
+                document.body.className = "red-bg";
             } else {
                 document.getElementById("PS4fw").innerHTML = "PS4 modificabile :)";
-                document.getElementById("PS4fw").className = "green-bg";
+                document.body.className = "green-bg";
             }
         }
     </script>
