@@ -39,18 +39,8 @@
           <h2 id="PS4ver"></h2>
     </center>
     <script>
-        var UA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple')).replace("PlayStation 4/","");
-        if (parseFloat(UA) > 11.00) {
-            document.getElementById("PS4fw").innerHTML = "PS4 NON MODIFICABILE! :(";
-            document.getElementById("PS4ver").innerHTML = parseFloat(UA);
-            document.getElementById("PS4fw").className = "red-bg";  
-        } else if (parseFloat(UA) <= 11.00) {
-            document.getElementById("PS4fw").innerHTML = "PS4 MODIFICABILE! :)";
-            document.getElementById("PS4ver").innerHTML = parseFloat(UA);
-            document.getElementById("PS4fw").className = "green-bg";
-        } else {
-            document.getElementById("PS4fw").innerHTML = "Apri questa pagina da un browser PS4.";
-        }
+        var UA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple')).replace("layStation 4/","");
+       if (UA == "9.00"){PS4fw.innerHTML="v"+UA+" Detected"};if(UA != "9.00"){PS4fw.innerHTML="Spoofed To v"+UA};
     </script>
 </body>
 </html>
