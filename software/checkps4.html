@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E' modificabile la mia PS4?</title>
+    <title>È modificabile la mia PS4?</title>
     <style>
         body {
             background-color: #efa541;
@@ -34,24 +34,25 @@
 </head>
 <body>
     <center>
-          <h1 id="PS4fw">Apri questa pagina da un browser PS4.</h1>
-          <br>
-          <h2 id="PS4ver"></h2>
+        <h1 id="PS4fw">Apri questa pagina da un browser PS4.</h1>
+        <br>
+        <h2 id="PS4ver"></h2>
     </center>
     <script>
-        var UA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple')).replace("layStation 4/","");
-       if (isNaN(UA)) {
-           PS4fw.innerHTML = "Apri questa pagina da un browser PS4.";
-       else {
-           var firmwareVersion = parseFloat(UA).toFixed(2);
-           if (firmwareVersion > 11.00) {
-              PS4fw.innerHTML = "PS4 non modificabile.";
-              document.getElementById("PS4fw").className = "red-bg";
-          else {
-              PS4fw.innerHTML = "PS4 modificabile.";
-              document.getElementById("PS4fw").className = "green-bg";
-           }
-    }
+        var UA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple')).replace("layStation 4/", "");
+        
+        if (isNaN(UA)) {
+            document.getElementById("PS4fw").innerHTML = "Apri questa pagina da un browser PS4.";
+        } else {
+            var firmwareVersion = parseFloat(UA).toFixed(2);
+            if (firmwareVersion > 11.00) {
+                document.getElementById("PS4fw").innerHTML = "PS4 non modificabile.";
+                document.getElementById("PS4fw").className = "red-bg";
+            } else {
+                document.getElementById("PS4fw").innerHTML = "PS4 modificabile.";
+                document.getElementById("PS4fw").className = "green-bg";
+            }
+        }
     </script>
 </body>
 </html>
