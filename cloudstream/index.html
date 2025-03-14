@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cloudstream Repos</title>
+    <style>
+      body{
+        transform: scale(3);
+        transform-origin: top;
+        height: 100vh; 
+        margin: 0; 
+        background: linear-gradient(45deg, darkred 20%, crimson, darkorange 60%, gold, bisque);
+        background-attachment: fixed; 
+        overflow: hidden;
+      }
+      @media screen and (max-width: 768px) {
+        body {
+          transform: none !important;
+          transform-origin: initial !important;
+        }
+      }
+      .button-33 {
+        background-color: #c2fbd7;
+        border-radius: 100px;
+        box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+        color: green;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 7px 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 250ms;
+        border: 0;
+        font-size: 6px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+      .button-33:hover {
+        box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+        transform: scale(1.05) rotate(-1deg);
+      }
+      h3{
+        font-family: Arial, Helvetica, sans-serif;
+        color: #dfd6d6;
+      }
+      h5{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 6px;
+        color: #dfd6d6;
+      }
+      a{
+        color:transparent
+      }
+      #rettangolo {
+      --item-height: 100px;
+      top: calc(50% - (var(--item-height) / 2));
+      height: var(--item-height);
+      width: 250px;
+      height: 250px;
+      background-color:rgba(255, 0, 0, 0.423);
+      border-radius: 10px 10px 10px 10px;
+      border: 2px solid black;
+      box-shadow: 3px 3px 5px #f0e8e8;
+     }
+    </style>
+  </head>
+  <body>
+    <center>
+      <br>
+      <div id="rettangolo">
+      <h3>
+        <strong>
+          Cloudstream repos: Tv italiana, film e partite.
+        </strong>
+      </h3>
+      <a href="https://github.com/recloudstream/cloudstream/releases/download/v4.5.1/4.5.1.apk">
+      <button class="button-33" role="button">Scarica cloudstream 4.5.1</button>
+      </a>
+      <br>
+      <button class="button-33" onclick="repo1()" role="button">Copia repo 1 (TV)</button>
+      <br>
+      <button class="button-33" onclick="repo2()" role="button">Copia repo 2 (Film + partite)</button>
+      <h5>
+        <i>
+          Update 14/03/2025
+        </i>
+      </h5>
+      </div>      
+    </center>
+    <script>
+      function repo1(){
+        navigator.clipboard.writeText("cloudstreamrepo://raw.githubusercontent.com/Gian-Fr/ItalianProvider/builds/repo.json");
+        alert("Repo 1 copiata.");
+      }
+      function repo2(){
+        navigator.clipboard.writeText("cloudstreamrepo://raw.githubusercontent.com/doGior/doGiorsHadEnough/builds/repo.json");
+        alert("Repo 2 copiata.");
+      }
+    </script>
+  </body>
+</html>
+
+<!--
+    ###CODED BY PANNISCO SOFTWARE###
+        1st release 14-03-2025
+-->
