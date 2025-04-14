@@ -18,7 +18,7 @@ function Show-ProgressBar($current, $total) {
     $barLength = 30
     $percent = [math]::Round(($current / $total) * 100)
     $filledLength = [math]::Floor(($current / $total) * $barLength)
-    $bar = ("█" * $filledLength).PadRight($barLength, '░')
+    $bar = ("???" * $filledLength) + ("   " * ($barLength - $filledLength))
     Write-Host ("Scaricati: $current / $total [$bar] $percent%") -NoNewline
     Write-Host "`r" -NoNewline
 }
