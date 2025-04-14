@@ -18,7 +18,7 @@ function Show-ProgressBar($current, $total) {
     $barLength = 30
     $percent = [math]::Round(($current / $total) * 100)
     $filledLength = [math]::Floor(($current / $total) * $barLength)
-    $bar = ("???" * $filledLength) + ("   " * ($barLength - $filledLength))
+    $bar = ("---" * $filledLength) + ("   " * ($barLength - $filledLength))
     Write-Host ("Scaricati: $current / $total [$bar] $percent%") -NoNewline
     Write-Host "`r" -NoNewline
 }
@@ -71,5 +71,5 @@ try {
 finally {
     Show-Cursor
     Clear-Host
-    Write-Host "GANG."
+    Write-Host "Arrivederci GANG!"
 }
