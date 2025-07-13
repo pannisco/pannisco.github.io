@@ -8,14 +8,18 @@ const COLS = 14;
 
 let score = 0;
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  // Calcola il massimo TILE_SIZE che mantiene tutto visibile
+  const tileW = window.innerWidth / COLS;
+  const tileH = window.innerHeight / ROWS;
+  TILE_SIZE = Math.floor(Math.min(tileW, tileH));
 
-  // Calcola la dimensione massima per far entrare tutta la griglia
-  TILE_SIZE = Math.floor(Math.min(
-    canvas.width / COLS,
-    canvas.height / ROWS
-  ));
+  canvas.width = TILE_SIZE * COLS;
+  canvas.height = TILE_SIZE * ROWS;
+
+  // Centra il canvas nella pagina (se vuoi)
+  canvas.style.position = 'absolute';
+  canvas.style.left = `${(window.innerWidth - canvas.width) / 2}px`;
+  canvas.style.top = `${(window.innerHeight - canvas.height) / 2}px`;
 }
 const backgroundMusic = new Audio('sounds/base.mp3');
 backgroundMusic.loop = true;
@@ -42,6 +46,9 @@ function playSound(sound) {
   const s = new Audio(sound.src); // nuova istanza ogni volta
   s.play();
 }
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
 function createFlash(x, y) {
   flashes.push({ timer: 0.1 }); // durata breve, 0.1 secondi
