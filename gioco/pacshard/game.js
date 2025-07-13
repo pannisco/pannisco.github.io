@@ -8,19 +8,25 @@ const COLS = 14;
 
 let score = 0;
 function resizeCanvas() {
-  // Calcola il massimo TILE_SIZE che mantiene tutto visibile
-  const tileW = window.innerWidth / COLS;
-  const tileH = window.innerHeight / ROWS;
-  TILE_SIZE = Math.floor(Math.min(tileW, tileH));
+  const isMobile = window.innerWidth < 768;
+  const zoomFactor = isMobile ? 0.85 : 1;
 
-  canvas.width = TILE_SIZE * COLS;
+  // Calcolo TILE_SIZE con zoom su mobile
+  TILE_SIZE = Math.floor(
+    Math.min(window.innerWidth / COLS, window.innerHeight / ROWS) * zoomFactor
+  );
+
+  canvas.width  = TILE_SIZE * COLS;
   canvas.height = TILE_SIZE * ROWS;
 
-  // Centra il canvas nella pagina (se vuoi)
+  offsetX = (window.innerWidth  - canvas.width ) / 2;
+  offsetY = (window.innerHeight - canvas.height) / 2;
+
   canvas.style.position = 'absolute';
-  canvas.style.left = `${(window.innerWidth - canvas.width) / 2}px`;
-  canvas.style.top = `${(window.innerHeight - canvas.height) / 2}px`;
+  canvas.style.left = `${offsetX}px`;
+  canvas.style.top  = `${offsetY}px`;
 }
+
 const backgroundMusic = new Audio('sounds/base.mp3');
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.5;  // opzionale, per regolare il volume
@@ -47,8 +53,6 @@ function playSound(sound) {
   s.play();
 }
 
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
 
 function createFlash(x, y) {
   flashes.push({ timer: 0.1 }); // durata breve, 0.1 secondi
