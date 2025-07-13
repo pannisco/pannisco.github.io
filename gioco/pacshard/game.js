@@ -7,7 +7,16 @@ const ROWS = 8;
 const COLS = 14;
 
 let score = 0;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
+  // Calcola la dimensione massima per far entrare tutta la griglia
+  TILE_SIZE = Math.floor(Math.min(
+    canvas.width / COLS,
+    canvas.height / ROWS
+  ));
+}
 const backgroundMusic = new Audio('sounds/base.mp3');
 backgroundMusic.loop = true;
 backgroundMusic.volume = 0.5;  // opzionale, per regolare il volume
